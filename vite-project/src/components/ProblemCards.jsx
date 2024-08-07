@@ -2,11 +2,12 @@ import React from "react";
 import Problem from "../assets/problem.png";
 import Solution from "../assets/solution.png";
 import Result from "../assets/result.png";
+import { FaLongArrowAltRight } from "react-icons/fa";
 
 export default function ProblemCards() {
   return (
     <section className="flex w-[1550px] my-[150px] mx-auto justify-between">
-      <article className="rounded-3xl bg-red-500 w-[400px] h-[500px]">
+      <article className="rounded-3xl bg-transparent pt-[35px] w-[400px] h-[500px] hover:shadow-custom transition-shadow duration-300 ease-in-out">
         <article className="px-[50px] flex justify-between">
           <aside>
             <img src={Problem} alt="Problem" />
@@ -21,10 +22,13 @@ export default function ProblemCards() {
             their data. Existing solutions are limited, slow, and suffer
             bottlenecks due to antiquated designs and outdated tech.
           </p>
+          <FaLongArrowAltRight
+            size={25}
+            className="mt-[100px] text-[#04B7A1]"
+          />
         </div>
-        <i></i>
       </article>
-      <article className="rounded-3xl bg-red-500 w-[400px] h-[500px]">
+      <article className="rounded-3xl bg-transparent pt-[35px] w-[400px] h-[500px] hover:shadow-custom transition-shadow duration-300 ease-in-out">
         <article className="px-[50px] flex justify-between">
           <aside>
             <img src={Solution} alt="Solution" />
@@ -40,10 +44,11 @@ export default function ProblemCards() {
             This makes it much easier, faster, and less costly to access,
             analyze, and automate data within complex environments.
           </p>
+          <FaLongArrowAltRight size={25} className="mt-[50px] text-[#04B7A1]" />
         </div>
         <i></i>
       </article>
-      <article className="rounded-3xl bg-red-500 w-[400px] h-[500px]">
+      <article className="rounded-3xl bg-transparent pt-[35px] w-[400px] h-[500px] hover:shadow-custom transition-shadow duration-300 ease-in-out">
         <article className="px-[50px] flex justify-between">
           <aside>
             <img src={Result} alt="Result" />
