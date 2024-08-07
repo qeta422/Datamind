@@ -23,11 +23,11 @@ export default function Header() {
             <li className="px-5 hover:border-b border-solid border-customGreen ">
               <a href="">Customers</a>
             </li>
-            <li className="px-5 pr-10 hover:border-b border-solid border-customGreen ">
+            <li className="px-5 hover:border-b border-solid border-customGreen ">
               <a href="">Team</a>
             </li>
             <button
-              className="w-[100px] h-[40px] rounded-lg py-2 px-4 text-base font-medium bg-[#283D63] hover:bg-[#04B7A1] transition-colors duration-300 ease-in-out cursor-pointer text-[#F8F7F7]"
+              className="w-[100px] h-[40px] rounded-lg py-2 px-4 text-base font-medium bg-[#283D63] hover:bg-[#04B7A1] transition-colors duration-300 ease-in-out cursor-pointer text-[#F8F7F7] ml-5"
               type="button"
             >
               Contact us
