@@ -41,7 +41,7 @@ export default function Banner() {
   }, []);
 
   return (
-    <section className="flex w-[1550px] m-auto justify-between">
+    <section id="home" className="flex w-[1550px] m-auto justify-between">
       <aside className="pt-[150px] pr-[160px]">
         <h1 ref={h1Ref} className="opacity-0">
           Your Data, AI & Analysis Partner

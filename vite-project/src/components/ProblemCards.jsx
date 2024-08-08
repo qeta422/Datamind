@@ -43,7 +43,7 @@ export default function ProblemCards() {
   }, []);
 
   return (
-    <section className="flex w-[1550px] my-[150px] mx-auto justify-between">
+    <section className="flex w-[1550px] mt-[250px] my-[130px] mx-auto justify-between">
       {[
         {
           img: Problem,
@@ -82,10 +82,14 @@ export default function ProblemCards() {
           </article>
           <div className="px-[50px] py-10">
             <p>{card.text}</p>
-            <FaLongArrowAltRight
-              size={25}
-              className={`text-[#04B7A1] ${card.mt}`}
-            />
+            {index !== 2 ? (
+              <FaLongArrowAltRight
+                size={25}
+                className={`text-[#04B7A1] ${card.mt}`}
+              />
+            ) : (
+              <></>
+            )}
           </div>
         </article>
       ))}

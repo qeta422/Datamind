@@ -42,7 +42,7 @@ export default function News() {
 
   return (
     <section className="w-[1550px] mx-auto">
-      <h1 className="text-center p-[100px]">News</h1>
+      <h1 className="text-center p-[130px]">News</h1>
       <article
         ref={(el) => (articlesRef.current[0] = el)}
         className="flex justify-between rounded-3xl bg-transparent opacity-0"
@@ -100,7 +100,7 @@ export default function News() {
       </article>
       <article className="flex justify-center">
         <button
-          className="w-[130px] h-[40px] rounded-full mt-[80px] py-2 px-4 text-base font-medium text-[#04B7A1] border border-solid border-customGreen hover:bg-[#04B7A1] transition-colors duration-300 ease-in-out cursor-pointer hover:text-[#F8F7F7] ml-5"
+          className="w-[130px] h-[40px] rounded-full mt-[150px] py-2 px-4 text-base font-medium text-[#04B7A1] border border-solid border-customGreen hover:bg-[#04B7A1] transition-colors duration-300 ease-in-out cursor-pointer hover:text-[#F8F7F7] ml-5"
           type="button"
         >
           View More

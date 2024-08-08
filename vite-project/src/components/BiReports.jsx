@@ -43,7 +43,7 @@ export default function BiReports() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-[150px]">
+    <div id="services" className="container mx-auto px-4 py-[200px]">
       <Slider {...settings}>
         {slidesData.map((slide, index) => (
           <div key={index} className="!flex content-center !justify-between">
