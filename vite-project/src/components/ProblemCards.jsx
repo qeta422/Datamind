@@ -74,10 +74,10 @@ export default function ProblemCards() {
         >
           <article className="px-[50px] flex justify-between">
             <aside>
-              <img src={card.img} alt={card.alt} />
+              <img className="w-[100px] p-0" src={card.img} alt={card.alt} />
             </aside>
             <aside>
-              <h3 className="p-9">{card.title}</h3>
+              <h3 className="p-7">{card.title}</h3>
             </aside>
           </article>
           <div className="px-[50px] py-10">

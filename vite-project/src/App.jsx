@@ -7,6 +7,7 @@ import Customers from "./components/Customers";
 import News from "./components/News";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 function App() {
   return (
