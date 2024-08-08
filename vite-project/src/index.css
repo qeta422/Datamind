@@ -22,7 +22,12 @@ h3 {
 
 p{
   color: #283D63;
-  font-size: 17px;
+  font-size: 19px;
+}
+
+span{
+  color: #283D63;
+  font-size: 13px;
 }
 
 a {
