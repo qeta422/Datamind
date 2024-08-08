@@ -5,28 +5,24 @@ import Business from "../assets/business.jpg";
 export default function News() {
   const articlesRef = useRef([]);
 
-  const observer = useMemo(
-    () =>
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add(
-                "animate-slideInFromBottom",
-                "opacity-100"
-              );
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        {
-          threshold: 0.1,
-        }
-      ),
-    []
-  );
-
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(
+              "animate-slideInFromBottom",
+              "opacity-100"
+            );
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
     articlesRef.current.forEach((article) => {
       if (article) {
         observer.observe(article);
@@ -34,13 +30,15 @@ export default function News() {
     });
 
     return () => {
-      articlesRef.current.forEach((article) => {
-        if (article) {
-          observer.unobserve(article);
-        }
-      });
+      if (articlesRef.current) {
+        articlesRef.current.forEach((article) => {
+          if (article) {
+            observer.unobserve(article);
+          }
+        });
+      }
     };
-  }, [observer]);
+  }, []);
 
   return (
     <section className="w-[1550px] mx-auto">
