@@ -38,7 +38,7 @@ export default function TeamSlider() {
   ];
 
   return (
-    <div id="team" className="container mx-auto px-4 py-[250px] pb-[270px]">
+    <div id="team" className="container mx-auto px-4 py-[200px] pb-[270px]">
       <h1 className="text-center pb-[130px]">Our Team</h1>
       <Slider {...settings}>
         {teamData.map((member, index) => (
