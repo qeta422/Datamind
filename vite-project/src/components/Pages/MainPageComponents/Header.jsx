@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import pixelcutExport from "../../../assets/pixelcut-export.png";
 import popupImg from "../../../assets/popupimg.jpg";
 
@@ -10,6 +11,9 @@ const Header = () => {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,18 +48,26 @@ const Header = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Save email to localStorage
+
     setLocalStorageItem("contactEmail", email);
     setLocalStorageItem("name", name);
 
-    // Clear form fields
     setName("");
     setEmail("");
-    // Close the modal
+
     closeModal();
   };
 
-  console.log("email: ", email);
+  const isHomePage = location.pathname === "/";
+
+  const handleNavigation = (sectionId) => {
+    if (isHomePage) {
+      document.querySelector(sectionId).scrollIntoView({ behavior: "smooth" });
+    } else {
+      setLocalStorageItem("scrollToSection", sectionId);
+      navigate("/");
+    }
+  };
 
   return (
     <>
@@ -66,7 +78,13 @@ const Header = () => {
       >
         <nav className="flex w-[1550px] py-[33px] m-auto items-center justify-between">
           <aside>
-            <a href="#home">
+            <a
+              href="#home"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("#home");
+              }}
+            >
               <img
                 className="w-[150px]"
                 src={pixelcutExport}
@@ -77,16 +95,48 @@ const Header = () => {
           <aside>
             <ul className="flex w-[500px] items-center justify-end">
               <li className="px-5 hover:border-b border-solid border-customGreen transition duration-500">
-                <a href="#home">Home</a>
+                <a
+                  href="#home"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation("#home");
+                  }}
+                >
+                  Home
+                </a>
               </li>
               <li className="px-5 hover:border-b border-solid border-customGreen ">
-                <a href="#services">Services</a>
+                <a
+                  href="#services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation("#services");
+                  }}
+                >
+                  Services
+                </a>
               </li>
               <li className="px-5 hover:border-b border-solid border-customGreen ">
-                <a href="#customers">Customers</a>
+                <a
+                  href="#customers"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation("#customers");
+                  }}
+                >
+                  Customers
+                </a>
               </li>
               <li className="px-5 hover:border-b border-solid border-customGreen ">
-                <a href="#team">Team</a>
+                <a
+                  href="#team"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavigation("#team");
+                  }}
+                >
+                  Team
+                </a>
               </li>
               <button
                 className="w-[100px] h-[40px] rounded-lg py-2 px-4 text-base font-medium bg-[#283D63] hover:bg-[#04B7A1] transition-colors duration-300 ease-in-out cursor-pointer text-[#F8F7F7] ml-5"
